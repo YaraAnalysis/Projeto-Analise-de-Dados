@@ -21,5 +21,5 @@ vendas_df = vendas_df.merge(clientes_df, on='ID Cliente').rename(columns={'E-mai
 frequencia_clientes = vendas_df['E-mail do Cliente'].value_counts()
 #print(frequencia_clientes)
 #frequencia_clientes[:5].plot(figsize=(15, 5), yticks=range(1, 100, 5))
-print('O cliente que comprou mais vezes foi:')
-print(frequencia_clientes[:1])
+print('\nO cliente que comprou mais vezes foi:')
+print(frequencia_clientes[:2])
