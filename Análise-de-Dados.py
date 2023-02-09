@@ -23,3 +23,9 @@ frequencia_clientes = vendas_df[['Primeiro Nome', 'Sobrenome', 'E-mail do Client
 #frequencia_clientes[:5].plot(figsize=(15, 5), yticks=range(1, 100, 5))
 print('\nO cliente que comprou mais vezes foi:')
 print(frequencia_clientes[:1])
+
+#Qual a Loja que mais vendeu?
+vendas_lojas = vendas_df.groupby('Nome da Loja').sum()
+vendas_lojas = vendas_lojas[['Quantidade Vendida']]
+print(vendas_lojas)
+vendas_lojas.plot()
