@@ -29,3 +29,10 @@ vendas_lojas = vendas_df.groupby('Nome da Loja').sum()
 vendas_lojas = vendas_lojas[['Quantidade Vendida']]
 print(vendas_lojas)
 vendas_lojas.plot()
+
+#ordenando o dataframe
+vendas_lojas = vendas_lojas.sort_values('Quantidade Vendida', ascending=False)
+display(vendas_lojas)
+
+#podemos plotar em um gráfico de barras
+vendas_lojas[:5].plot(figsize=(15, 5), kind='bar')
