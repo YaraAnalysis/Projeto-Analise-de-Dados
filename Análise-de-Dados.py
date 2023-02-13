@@ -27,12 +27,22 @@ print(frequencia_clientes[:1])
 #Qual a Loja que mais vendeu?
 vendas_lojas = vendas_df.groupby('Nome da Loja').sum()
 vendas_lojas = vendas_lojas[['Quantidade Vendida']]
-print(vendas_lojas)
+#print(vendas_lojas)
 vendas_lojas.plot()
 
 #ordenando o dataframe
 vendas_lojas = vendas_lojas.sort_values('Quantidade Vendida', ascending=False)
-display(vendas_lojas)
+print(vendas_lojas)
 
 #podemos plotar em um gráfico de barras
-vendas_lojas[:5].plot(figsize=(15, 5), kind='bar')
+#vendas_lojas[:5].plot(figsize=(15, 5), kind='bar')
+
+#Qual produto mais vendeu?
+
+# Maneira 1
+maior_valor = vendas_lojas['Quantidade Vendida'].max()
+melhor_loja = vendas_lojas['Quantidade Vendida'].idxmax()
+print(melhor_loja, maior_valor)
+
+# Maneira 2
+vendas_lojas[:1]
